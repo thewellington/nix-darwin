@@ -22,6 +22,7 @@
         ./systemPackages.nix
         ./homebrew.nix
         ./system-defaults.nix
+        ./fonts.nix
       ];
 
       system.activationScripts.applications.text = let
