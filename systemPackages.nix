@@ -11,6 +11,7 @@
     # bbedit #dies not work yet 2026-04-12
     brave
     discord
+    liquidprompt
     mas
     iterm2
     zed-editor
