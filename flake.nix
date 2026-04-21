@@ -6,11 +6,11 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -49,9 +49,9 @@
 
       system.primaryUser = "thewellington";
 
-      # imports = [
-      #   ./system-defaults.nix
-      # ];
+      users.users.thewellington = {
+        home = "/Users/thewellington";
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -68,11 +68,19 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      programs.zsh ={
+        enable = true;
+        promptInit = "";
+        interactiveShellInit = ''
+          eval "$(${pkgs.starship}/bin/starship init zsh)"
+        '';
+      };
     };
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
+    # $ darwin-rebuild build --flake .#doctor-teeth
     darwinConfigurations."doctor-teeth" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
@@ -88,10 +96,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.user.thewellington - import ./home.nix;
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
+          home-manager.users.thewellington = import ./home.nix;
         }
       ];
     };
