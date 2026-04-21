@@ -5,6 +5,9 @@
     user = "thewellington";
     brews = [
       #"mas"
+      "brightness"
+      "speedtest-cli"
+
     ];
     casks = [
       "1password"
@@ -32,10 +35,9 @@
     ];
     masApps = {
       "1Password for Safari" = 1569813296;
-      # "Zeroconf Browser" = 1355001318;
       "Discovery - DNS-SD Browser" = 1381004916;
     };
-    onActivation.cleanup = "uninstall"; # none, uninstsll, zap
+    onActivation.cleanup = "zap"; # none, uninstall, zap
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
   };

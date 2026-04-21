@@ -76,7 +76,7 @@
   programs.zsh = {
     enable = true;
 
-    initExtra = ''
+    initContent = ''
       eval "$(starship init zsh)"
     '';
   };
