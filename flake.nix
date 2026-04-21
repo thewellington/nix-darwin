@@ -21,10 +21,10 @@
       environment.systemPackages = with pkgs; [];
 
       imports = [
-        ./systemPackages.nix
-        ./homebrew.nix
-        ./system-defaults.nix
-        ./fonts.nix
+        ./nix-modules/systemPackages.nix
+        ./nix-modules/homebrew.nix
+        ./nix-modules/system-defaults.nix
+        ./nix-modules/fonts.nix
       ];
 
       system.activationScripts.applications.text = let
@@ -96,7 +96,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.thewellington = import ./home.nix;
+          home-manager.users.thewellington = import ./home-manager/home.nix;
         }
       ];
     };
