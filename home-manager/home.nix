@@ -77,6 +77,7 @@
     userEmail = "thewellington@gmail.com";
     lfs.enable = true;
     extraConfig = {
+      core.excludesfile = "~/.gitignore";
       init.defaultBranch = "main";
       github.user = "thewellington";
     };
@@ -87,6 +88,13 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = false;
+    settings = {
+      add_newline = true;
+      hostname.disabled = false;
+      username.disabled = false;
+      username.show_always = true;
+      format = [ "$username" "$hostname" "$directory" "$git_branch" "$git_status" "$cmd_duration"  "$jobs" "$character" ];
+    };
   };
 
   programs.zsh = {
@@ -96,5 +104,40 @@
     '';
   };
 
-  
+  home.file.".gitignore".text = ''
+    # Mac
+    .DS_Store
+    .DS_Store?
+    ._*
+    .Spotlight-V100
+    .Trashes
+    
+    # Windows
+    ehthumbs.db
+    Thumbs.db
+
+    # General
+    log/
+    *.log
+
+    # swap files
+    ~*
+    *.swp
+
+    # BBedit
+    *.bbprojectd
+
+    # git
+    w-*/ # hide worktrees
+
+    # Netlify
+    .netlify
+
+    # Visual Studio Code
+    .vscode/
+    *.code-workspace
+
+  '';
+
+
 }
