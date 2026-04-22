@@ -100,6 +100,12 @@
   programs.zsh = {
     enable = true;
     initContent = ''
+      # ENVIRONMENT VARIABLES
+      export CLICOLOR=1
+      # Example: directories bold cyan — edit the string to taste (see `man ls`, LSCOLORS)
+      export LSCOLORS=cxfxcxdxbxegedabagacad
+
+      # STARSHIP
       eval "$(starship init zsh)"
     '';
   };
