@@ -84,6 +84,16 @@
     darwinConfigurations."doctor-teeth" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
+
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.backupFileExtension = "nixbkup";
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          # home-manager.extraSpecialArgs = { inherit unstable };
+          home-manager.users.thewellington = import ./home-manager/home.nix;
+        }
+
         nix-homebrew.darwinModules.nix-homebrew
         {
             nix-homebrew = {
@@ -91,13 +101,6 @@
               enableRosetta = true;
               user = "thewellington";
             };
-        }
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          # home-manager.extraSpecialArgs = { inherit unstable };
-          home-manager.users.thewellington = import ./home-manager/home.nix;
         }
       ];
     };
