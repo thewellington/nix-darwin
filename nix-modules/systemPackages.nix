@@ -11,15 +11,21 @@
     # bbedit #dies not work yet 2026-04-12
     brave
     discord
-    mas
+    
     iterm2
+    mas
     zed-editor
     zoom-us
     #
     # cli apps
+    aws-cli
+    azure-cli
     cowsay
     gpp
     nmap
+    netlify-cli
+    
+
 
   ];
 }
