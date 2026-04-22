@@ -70,19 +70,31 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
-
-  programs.zsh = {
+  programs.git = {
     enable = true;
-
-    initContent = ''
-      eval "$(starship init zsh)"
-    '';
+    userName = "thewellington";
+    userEmail = "thewellington@gmail.com";
+    lfs.enable = true;
+    extraConfig = {
+      init.defaultBranch = "main";
+      github.user = "thewellington";
+    };
   };
+
+  programs.home-manager.enable = true;
 
   programs.starship = {
     enable = true;
     enableZshIntegration = false;
   };
+
+  programs.zsh = {
+    enable = true;
+    initContent = ''
+      eval "$(starship init zsh)"
+    '';
+  };
+
+  
 }
