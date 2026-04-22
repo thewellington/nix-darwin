@@ -18,7 +18,7 @@
     zoom-us
     #
     # cli apps
-    aws-cli
+    awscli2
     azure-cli
     cowsay
     gpp
