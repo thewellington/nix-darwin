@@ -24,7 +24,7 @@
     gpp
     nmap
     netlify-cli
-    
+    pandoc
 
 
   ];
