@@ -70,7 +70,7 @@
     menuExtraClock.ShowDayOfWeek = false;
     screensaver.askForPassword = true;
     screensaver.askForPasswordDelay = 5;
-    spaces.spans-displays = true;
+    spaces.spans-displays = false;
     trackpad.Clicking = true;
     trackpad.Dragging = true;
     trackpad.DragLock = true;

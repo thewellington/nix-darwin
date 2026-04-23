@@ -93,7 +93,7 @@
       hostname.disabled = false;
       username.disabled = false;
       username.show_always = true;
-      format = [ "$username" "$hostname" "$directory" "$git_branch" "$git_status" "$cmd_duration"  "$jobs" "$character" ];
+      format = "$username$hostname$directory$git_branch$git_status$cmd_duration$jobs$character";
     };
   };
 
@@ -144,6 +144,9 @@
     *.code-workspace
 
   '';
+  home.sessionPath = [
+    "${config.home.homeDirectory}/bin"
 
+  ];
 
 }
