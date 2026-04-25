@@ -80,6 +80,8 @@
       core.excludesfile = "~/.gitignore";
       init.defaultBranch = "main";
       github.user = "thewellington";
+      credential.helper = ["" "netlify" "osxkeychain"];
+      include.path = "/Users/thewellington/.netlify/helper/git-config";
     };
   };
 
@@ -103,10 +105,14 @@
       # ENVIRONMENT VARIABLES
       export CLICOLOR=1
       # Example: directories bold cyan — edit the string to taste (see `man ls`, LSCOLORS)
-      export LSCOLORS=cxfxcxdxbxegedabagacad
+      # export LSCOLORS=cxfxcxdxbxegedabagacad
+      export LSCOLORS=exfxcxdxbxegedabagacad
 
       # STARSHIP
       eval "$(starship init zsh)"
+
+      # NETLIFY
+      if [ -f '/Users/thewellington/.netlify/helper/path.zsh.inc' ]; then source '/Users/thewellington/.netlify/helper/path.zsh.inc'; fi
     '';
   };
 
@@ -117,7 +123,7 @@
     ._*
     .Spotlight-V100
     .Trashes
-    
+
     # Windows
     ehthumbs.db
     Thumbs.db
@@ -146,6 +152,7 @@
   '';
   home.sessionPath = [
     "${config.home.homeDirectory}/bin"
+    "${config.home.homeDirectory}/.local/bin"
 
   ];
 
