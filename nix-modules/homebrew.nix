@@ -7,8 +7,8 @@
       #"mas"
       "brightness"
       "speedtest-cli"
-
     ];
+    
     casks = [
       "1password"
       "arq"
@@ -25,6 +25,7 @@
       "nordvpn"
       "quicksilver"
       "soundsource"
+      "tag"
       "the-unarchiver"
       "qlstephen"
       "qlcommonmark"
@@ -33,10 +34,12 @@
       #"wkhtmltopdf"
       #"warp"
     ];
+    
     masApps = {
       # "1Password for Safari" = 1569813296;
       # "Discovery - DNS-SD Browser" = 1381004916;
     };
+    
     onActivation.cleanup = "zap"; # none, uninstall, zap
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
