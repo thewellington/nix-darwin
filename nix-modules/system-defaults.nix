@@ -16,29 +16,55 @@
       #Productivity
       "/Applications/Mimestream.app"
       "/Applications/Canary Mail.app"
-      # "/Applications/Safari.app"
+      "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
       "/System/Applications/Calendar.app"
       "/Applications/Things.app"
 
       # Communications
       "/System/Applications/Messages.app"
       "${pkgs.discord}/Applications/Discord.app"
+      "/System/Applications/Phone.app"
 
       # Code
       "/Applications/BBEdit.app"
       "${pkgs.zed-editor}/Applications/Zed.app"
+      "Applications/Cursor.app"
       "/Applications/Kaleidoscope.app"
       "/Applications/Tower.app"
       # "Applications/Transmit.app"
+      "/Applications/TablePlus.app"
+      "/Applications/Table\ Tool.app"
 
-      # Creative tools ()
+      # Creative tools (Adobe)
+      "/Applications/Adobe\ Photoshop\ 2026/Adobe\ Photoshop\ 2026.app"
+      "/Applications/Adobe\ Lightroom\ Classic/Adobe\ Lightroom\ Classic.app"
+      "/Applications/Adobe\ Illustrator\ 2026/Adobe\ Illustrator.app"
+      "/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app"
+
+      "Applications/Pastel.app"
+
+      # Creative (Affinity apps)
+      "/Applications/Affinity\ Designer.app"
+      "/Applications/Affinity\ Publisher.app"
+      "/Applications/Affinity\ Photo.app"
+
+
+      # Nik Collections
+      "/Applications/Nik\ Collection\ 8/Nik\ 8\ Silver\ Efex.app"
+      "/Applications/Nik\ Collection\ 8/Nik\ 8\ Presharpener.app"
+      "/Applications/Nik\ Collection\ 8/Nik\ 8\ Sharpener\ Output.app"
 
       # Office
       "/Applications/Microsoft\ Word.app"
       "/Applications/Microsoft\ Excel.app"
       "/Applications/Microsoft\ PowerPoint.app"
+
+      # Utilities
       "/Applications/pCalc.app"
       "${pkgs.iterm2}/Applications/iTerm2.app"
+      "${pkgs.ghostty-bin}/Applications/Ghostty.app"
+      "/System/Applications/Utilities/Terminal.app"
+      "/System/Applications/Utilities/Activity\ Monitor.app"
       "/System/Applications/Utilities/Console.app"
     ];
     dock.persistent-others = [
