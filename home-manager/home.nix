@@ -85,6 +85,27 @@
     };
   };
 
+  programs.ghostty = {
+      enable = true;
+      # On macOS, ensure you use the binary package
+      package = pkgs.ghostty-bin;
+
+      settings = {
+        # my quick terminal settings
+        keybind = [ "global:ctrl+grave_accent=toggle_quick_terminal" ];
+        "quick-terminal-position" = "top";
+        "quick-terminal-size" = "30%,50%";
+
+        # macOS specific features
+        "macos-titlebar-style" = "tabs";
+        "macos-option-as-alt" = true;
+        "window-save-state" = "always";
+        "window-vsync" = true;
+        "window-colorspace" = "display-p3";
+        "quick-terminal-screen" = "macos-menu-bar";
+      };
+  };
+
   programs.home-manager.enable = true;
 
   programs.starship = {
