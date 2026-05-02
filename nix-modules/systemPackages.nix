@@ -19,7 +19,7 @@
     cowsay
     gpp # resume
     ghostty-bin
-    mas # required by home brew to install mas items
+    mas # required by homebrew to install mas items
     mkalias
     netlify-cli
     nmap
