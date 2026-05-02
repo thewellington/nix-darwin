@@ -146,6 +146,17 @@
 
       # NETLIFY
       if [ -f '/Users/thewellington/.netlify/helper/path.zsh.inc' ]; then source '/Users/thewellington/.netlify/helper/path.zsh.inc'; fi
+
+      # GHOSTTY
+      set_ghostty_title() {
+        # Use $(tty) to include the specific TTY device in the title
+        echo -ne "\e]0;Ghostty - $(tty)\a"
+      }
+
+      # Run the function when the directory changes or on startup
+      autoload -Uz add-zsh-hook
+      add-zsh-hook chpwd set_ghostty_title
+      set_ghostty_title
     '';
   };
 
