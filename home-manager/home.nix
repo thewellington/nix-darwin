@@ -96,6 +96,12 @@
         "quick-terminal-position" = "top";
         "quick-terminal-size" = "30%,50%";
 
+        "font-family" = "Source Code Pro";
+        "font-size" = "14";
+        "window-padding-x" = "20";
+        "window-padding-y" = "20";
+        "window-padding-balance" = true;
+
         # macOS specific features
         "macos-titlebar-style" = "tabs";
         "macos-option-as-alt" = true;
@@ -194,6 +200,21 @@
     *.code-workspace
 
   '';
+  # Create proper macOS aliases for Home Manager apps so they appear in
+  # Dock, Launchpad, and Spotlight (symlinks from the Nix store don't work).
+  home.activation.aliasApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    app_folder="${config.home.homeDirectory}/Applications/Home Manager Aliases"
+    rm -rf "$app_folder"
+    mkdir -p "$app_folder"
+    find "${config.home.homeDirectory}/Applications/Home Manager Apps" \
+      -maxdepth 1 -type l -exec readlink '{}' + | \
+    while read -r src; do
+      app_name=$(basename "$src")
+      echo "aliasing $app_name" >&2
+      ${pkgs.mkalias}/bin/mkalias "$src" "$app_folder/$app_name"
+    done
+  '';
+
   home.sessionPath = [
     "${config.home.homeDirectory}/bin"
     "${config.home.homeDirectory}/.local/bin"
