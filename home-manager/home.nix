@@ -97,10 +97,16 @@
         "quick-terminal-size" = "30%,50%";
 
         "font-family" = "Source Code Pro";
+        "font-family-bold" = "Source Code Pro Bold";
+        "font-family-italic" = "Source Code Pro Italic";
+        "font-family-bold-italic" = "Source Code Pro Bold Italic";
         "font-size" = "14";
         "window-padding-x" = "20";
         "window-padding-y" = "20";
         "window-padding-balance" = true;
+
+        # Keep shell integration but disable auto-title so our zsh precmd title wins
+        "shell-integration-features" = "no-title";
 
         # macOS specific features
         "macos-titlebar-style" = "tabs";
@@ -155,14 +161,12 @@
 
       # GHOSTTY
       set_ghostty_title() {
-        # Use $(tty) to include the specific TTY device in the title
-        echo -ne "\e]0;Ghostty - $(tty)\a"
+        local tty_name=$(tty | sed 's|/dev/||')
+        echo -ne "\e]0;''${tty_name}\a"
       }
 
-      # Run the function when the directory changes or on startup
       autoload -Uz add-zsh-hook
-      add-zsh-hook chpwd set_ghostty_title
-      set_ghostty_title
+      add-zsh-hook precmd set_ghostty_title
     '';
   };
 
