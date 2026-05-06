@@ -104,6 +104,8 @@
         "window-padding-x" = "20";
         "window-padding-y" = "20";
         "window-padding-balance" = true;
+        "window-height" = "20";
+        "window-width" = "75";
 
         # Keep shell integration but disable auto-title so our zsh precmd title wins
         "shell-integration-features" = "no-title";
@@ -111,7 +113,7 @@
         # macOS specific features
         "macos-titlebar-style" = "tabs";
         "macos-option-as-alt" = true;
-        "window-save-state" = "always";
+        "window-save-state" = "default";
         "window-vsync" = true;
         "window-colorspace" = "display-p3";
         "quick-terminal-screen" = "macos-menu-bar";
