@@ -6,6 +6,7 @@
     brews = [
       #"mas"
       "brightness"
+      "tag"
     ];
 
     casks = [
@@ -24,7 +25,6 @@
       "nordvpn"
       "quicksilver"
       "soundsource"
-      # "tag" # had to run brew install tag, else it became tag-app
       "the-unarchiver"
       "qlstephen"
       "qlcommonmark"
