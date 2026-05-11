@@ -137,12 +137,23 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [ vim-airline ];
-    settings = {
-      ignorecase = true;
-      number = true;
-    };
     extraConfig = ''
+      set ignorecase
+      set smartcase
+      set linebreak
+      set tabstop=2
+      set softtabstop=2
+      set shiftwidth=2
+      set expandtab
+      set number
+      set autoindent
+      set smartindent
       set mouse=a
+      syntax on
+      set colorcolumn=80
+      set gdefault
+      set hlsearch
+
     '';
   };
 
