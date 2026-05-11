@@ -6,6 +6,9 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # nix-homebrew pins 5.1.1; current homebrew-cask requires newer Brew (Ruby DSL).
+    # 5.1.11 also fixes API cask loading (nil dep_type in CaskStructGenerator).
+    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/5.1.11";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -100,10 +103,6 @@
               enable = true;
               enableRosetta = true;
               user = "thewellington";
-              # Homebrew 5.1.1 crashes in CaskStructGenerator when loading some
-              # casks from the API (nil dep_type in process_depends_on). Prefer
-              # git taps until nix-homebrew's brew-src includes the upstream fix.
-              extraEnv = { HOMEBREW_NO_INSTALL_FROM_API = "1"; };
             };
         }
       ];
