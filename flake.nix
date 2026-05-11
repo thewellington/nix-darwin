@@ -100,6 +100,10 @@
               enable = true;
               enableRosetta = true;
               user = "thewellington";
+              # Homebrew 5.1.1 crashes in CaskStructGenerator when loading some
+              # casks from the API (nil dep_type in process_depends_on). Prefer
+              # git taps until nix-homebrew's brew-src includes the upstream fix.
+              extraEnv = { HOMEBREW_NO_INSTALL_FROM_API = "1"; };
             };
         }
       ];
