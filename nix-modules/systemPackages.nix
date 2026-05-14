@@ -17,6 +17,7 @@
     awscli2
     azure-cli
     cowsay
+    exiftool
     gpp # resume
     mas # required by homebrew to install mas items
     mkalias
