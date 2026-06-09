@@ -23,6 +23,8 @@
       # Communications
       "/System/Applications/Messages.app"
       "${pkgs.discord}/Applications/Discord.app"
+      "/Applications/Signal.app"
+      "/Applications/WhatsApp.app"
       "/System/Applications/Phone.app"
 
       # Code
@@ -89,7 +91,7 @@
     iCal.CalendarSidebarShown = true;
     loginwindow.autoLoginUser = null;
     loginwindow.LoginwindowText = "Found this computer? Please contect W. S. Wellington at thewellington@gmail.com";
-    loginwindow.SHOWFULLNAME = false;
+    loginwindow.SHOWFULLNAME = true;
     menuExtraClock.Show24Hour = true;
     menuExtraClock.ShowAMPM = false;
     menuExtraClock.ShowDate = 1;
