@@ -67,8 +67,7 @@
     # EDITOR = "emacs";
 
   };
-
-  # Let Home Manager install and manage itself.
+  programs.discord.enable = true;
 
   programs.git = {
     enable = true;
@@ -119,6 +118,7 @@
       };
   };
 
+  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   programs.starship = {

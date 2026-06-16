@@ -22,7 +22,7 @@
 
       # Communications
       "/System/Applications/Messages.app"
-      "${pkgs.discord}/Applications/Discord.app"
+      "/Users/thewellington/Applications/Home Manager Apps/Discord.App"
       "/Applications/Signal.app"
       "/Applications/WhatsApp.app"
       "/System/Applications/Phone.app"
@@ -30,7 +30,7 @@
       # Code
       "/Applications/BBEdit.app"
       "${pkgs.zed-editor}/Applications/Zed.app"
-      "Applications/Cursor.app"
+      "/Applications/Cursor.app"
       "/Applications/Kaleidoscope.app"
       "/Applications/Tower.app"
       # "Applications/Transmit.app"
