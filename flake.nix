@@ -9,7 +9,7 @@
     # nix-homebrew pins 5.1.1; current homebrew-cask requires newer Brew (Ruby DSL).
     # 5.1.11 also fixes API cask loading (nil dep_type in CaskStructGenerator).
     nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/5.1.11";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 

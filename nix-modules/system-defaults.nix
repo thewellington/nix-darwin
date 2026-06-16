@@ -64,7 +64,7 @@
       # Utilities
       "/Applications/pCalc.app"
       "${pkgs.iterm2}/Applications/iTerm2.app"
-      "${pkgs.ghostty-bin}/Applications/Ghostty.app"
+      "/Users/thewellington/Applications/Home Manager Apps/Ghostty.app"
       "/System/Applications/Utilities/Terminal.app"
       "/System/Applications/Utilities/Activity\ Monitor.app"
       "/System/Applications/Utilities/Console.app"

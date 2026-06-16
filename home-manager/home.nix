@@ -15,7 +15,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "26.11";
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -71,10 +71,10 @@
 
   programs.git = {
     enable = true;
-    userName = "thewellington";
-    userEmail = "thewellington@gmail.com";
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user.name = "thewellington";
+      user.email = "thewellington@gmail.com";
       core.excludesfile = "~/.gitignore";
       init.defaultBranch = "main";
       github.user = "thewellington";

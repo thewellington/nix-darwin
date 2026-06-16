@@ -60,7 +60,7 @@ Current input pins (see `flake.nix`):
 
 - **nixpkgs** — `nixpkgs-unstable`
 - **nix-darwin** — `master`
-- **home-manager** — `release-25.11` (must stay aligned with `home.stateVersion` in `home-manager/home.nix`)
+- **home-manager** — `master` (`home.stateVersion` in `home-manager/home.nix` should match your nixpkgs generation, currently `26.11`)
 - **nix-homebrew** — default branch, with Homebrew core pinned to `5.1.11`
 
 When bumping Home Manager to a new release, update both the flake input **and** `home.stateVersion` in `home-manager/home.nix` after reading the [Home Manager release notes](https://github.com/nix-community/home-manager/releases).
@@ -86,8 +86,3 @@ nix-shell
 - **Build errors after `nix flake update`** — Try updating one input at a time, or roll back with `git checkout flake.lock` and rebuild.
 - **Home Manager option removed/renamed** — Check release notes; you may need to adjust `home-manager/home.nix`.
 - **nix-darwin breaking changes** — Run `darwin-rebuild changelog` for migration notes related to `system.stateVersion`.
-
-
-
-nix-collect-garbage -d
-sudo nix-collect-garbage --delete-older-than 5d
