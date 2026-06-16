@@ -93,7 +93,7 @@
         keybind = [ "global:ctrl+grave_accent=toggle_quick_terminal" ];
         "quick-terminal-position" = "top";
         "quick-terminal-size" = "30%,50%";
-
+        "scrollback-limit" = "10000";
         "font-family" = "Source Code Pro";
         "font-family-bold" = "Source Code Pro Bold";
         "font-family-italic" = "Source Code Pro Italic";
@@ -104,6 +104,9 @@
         "window-padding-balance" = true;
         "window-height" = "20";
         "window-width" = "75";
+        "window-inherit-working-directory" = false;
+        "tab-inherit-working-directory" = true;
+        "split-inherit-working-directory" = true;
 
         # Keep shell integration but disable auto-title so our zsh precmd title wins
         "shell-integration-features" = "no-title";
