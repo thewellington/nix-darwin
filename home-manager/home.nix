@@ -117,7 +117,8 @@
         "window-save-state" = "default";
         "window-vsync" = true;
         "window-colorspace" = "display-p3";
-        "quick-terminal-screen" = "macos-menu-bar";
+        "quick-terminal-screen" = "main";
+        "macos-icon" = "official";
       };
   };
 
