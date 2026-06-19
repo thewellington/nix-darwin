@@ -86,3 +86,6 @@ nix-shell
 - **Build errors after `nix flake update`** — Try updating one input at a time, or roll back with `git checkout flake.lock` and rebuild.
 - **Home Manager option removed/renamed** — Check release notes; you may need to adjust `home-manager/home.nix`.
 - **nix-darwin breaking changes** — Run `darwin-rebuild changelog` for migration notes related to `system.stateVersion`.
+
+
+sudo nix flake update

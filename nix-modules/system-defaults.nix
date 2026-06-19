@@ -106,5 +106,8 @@
     WindowManager.EnableStandardClickToShowDesktop = false;
     WindowManager.StandardHideDesktopIcons = false;
 
+    NSGlobalDomain = {
+      NSWindowShouldDragOnGesture = true; # allows cmd-ctrl to drag on any window
+    };
   };
 }
