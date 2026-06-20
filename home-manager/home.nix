@@ -130,12 +130,13 @@
     enableZshIntegration = false;
     settings = {
       add_newline = true;
-      format = "$username$hostname$directory$git_branch$git_status$cmd_duration$jobs$character";
+      format = "$username$hostname$directory$nix_shell$git_branch$git_status$cmd_duration$jobs$character";
       hostname.disabled = false;
       username.disabled = false;
       username.show_always = true;
       nix_shell.symbol = "❄️ ";
       nix_shell.disabled = false;
+      nix_shell.heuristic = true;
     };
   };
 
