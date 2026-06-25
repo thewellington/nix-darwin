@@ -81,6 +81,13 @@
       };
     };
   in
+  let
+    system = "aarch64-darwin";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#doctor-teeth
@@ -106,6 +113,11 @@
             };
         }
       ];
+    };
+
+    # Optional ad-hoc shell: nix develop ~/.config/nix-darwin#node
+    devShells.${system}.node = pkgs.mkShell {
+      packages = with pkgs; [ nodejs_22 ];
     };
   };
 }
