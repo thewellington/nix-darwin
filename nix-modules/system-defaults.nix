@@ -79,6 +79,7 @@
     dock.tilesize = 16;
     dock.largesize = 128;
     dock.show-recents = false;
+    dock.expose-group-apps = true;
     finder.NewWindowTarget = "Home";
     finder.ShowExternalHardDrivesOnDesktop = false ;
     finder.ShowHardDrivesOnDesktop = false;
@@ -108,6 +109,19 @@
 
     NSGlobalDomain = {
       NSWindowShouldDragOnGesture = true; # allows cmd-ctrl to drag on any window
+    };
+
+    CustomUserPreferences = {
+      "NSGlobalDomain" = { # use for defaults that are not available via Nix
+        NSSplitViewItemSidebarDefaultsToFloatingAppearance = false; # Default true - turns off floating sidebar in Finder windows
+        NSConvolutionOverride1 = 10; # Default 26 - set Finder window corner radius
+        # NSSplitViewItemGlassMinimumCornerRadius = 19; # default 19 - Set sidebar corner radius in Finder windows
+        NSQuitAlwaysKeepsWindows = false;
+  };
+
+      "com.apple.Safari" = {
+        ShowFullURLInSmartSearchField = true;
+      };
     };
   };
 }

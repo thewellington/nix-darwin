@@ -129,7 +129,7 @@
       username.show_always = true;
       nix_shell.symbol = "❄️ ";
       nix_shell.disabled = false;
-      nix_shell.heuristic = true;
+      nix_shell.heuristic = false;
     };
   };
 
