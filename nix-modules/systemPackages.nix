@@ -9,7 +9,6 @@
     # bbedit #dies not work yet 2026-04-12
     brave
     # discord
-    iterm2
     zed-editor
     zoom-us
 

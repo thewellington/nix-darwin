@@ -63,7 +63,7 @@
 
       # Utilities
       "/Applications/pCalc.app"
-      "${pkgs.iterm2}/Applications/iTerm2.app"
+      #"${pkgs.iterm2}/Applications/iTerm2.app"
       "/Users/thewellington/Applications/Home Manager Apps/Ghostty.app"
       "/System/Applications/Utilities/Terminal.app"
       "/System/Applications/Utilities/Activity\ Monitor.app"
@@ -115,7 +115,7 @@
       "NSGlobalDomain" = { # use for defaults that are not available via Nix
         NSSplitViewItemSidebarDefaultsToFloatingAppearance = false; # Default true - turns off floating sidebar in Finder windows
         NSConvolutionOverride1 = 10; # Default 26 - set Finder window corner radius
-        # NSSplitViewItemGlassMinimumCornerRadius = 19; # default 19 - Set sidebar corner radius in Finder windows
+        NSSplitViewItemGlassMinimumCornerRadius = 10; # default 19 - Set sidebar corner radius in Finder windows
         NSQuitAlwaysKeepsWindows = false;
   };
 
