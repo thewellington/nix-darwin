@@ -23,6 +23,7 @@
       "loopback"
       "microsoft-office"
       "nordvpn"
+      "qgis"
       "quicksilver"
       "soundsource"
       "the-unarchiver"
@@ -32,6 +33,7 @@
       #"1Password-cli"
       #"wkhtmltopdf"
       #"warp"
+      "darrylmorley/whatcable/whatcable"
     ];
 
     masApps = {
