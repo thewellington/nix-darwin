@@ -119,9 +119,9 @@
         NSQuitAlwaysKeepsWindows = false;
   };
 
-      "com.apple.Safari" = {
-        ShowFullURLInSmartSearchField = true;
-      };
+      # "com.apple.Safari" = {
+      #   ShowFullURLInSmartSearchField = true;
+      # };
     };
   };
 }

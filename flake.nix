@@ -6,9 +6,9 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    # nix-homebrew pins 5.1.1; current homebrew-cask requires newer Brew (Ruby DSL).
-    # 5.1.11 also fixes API cask loading (nil dep_type in CaskStructGenerator).
-    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/5.1.11";
+    # Track Homebrew tip; refresh with: nix flake update brew-src
+    # (nix-homebrew's default pin lags; current casks need Brew 6.x DSL.)
+    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/main";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };

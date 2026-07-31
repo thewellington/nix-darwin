@@ -48,6 +48,7 @@ nix flake update nixpkgs
 nix flake update nix-darwin
 nix flake update home-manager
 nix flake update nix-homebrew
+nix flake update brew-src
 ```
 
 Then apply the new lock file:
@@ -61,7 +62,7 @@ Current input pins (see `flake.nix`):
 - **nixpkgs** — `nixpkgs-unstable`
 - **nix-darwin** — `master`
 - **home-manager** — `master` (`home.stateVersion` in `home-manager/home.nix` should match your nixpkgs generation, currently `26.11`)
-- **nix-homebrew** — default branch, with Homebrew core pinned to `5.1.11`
+- **nix-homebrew** — default branch; Homebrew core follows `Homebrew/brew` `main` (update with `nix flake update brew-src`)
 
 When bumping Home Manager to a new release, update both the flake input **and** `home.stateVersion` in `home-manager/home.nix` after reading the [Home Manager release notes](https://github.com/nix-community/home-manager/releases).
 
