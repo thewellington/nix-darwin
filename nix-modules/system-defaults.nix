@@ -18,7 +18,7 @@
       "/Applications/Canary Mail.app"
       "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
       "/System/Applications/Calendar.app"
-      "/Applications/Things.app"
+      "/Applications/Things3.app"
 
       # Communications
       "/System/Applications/Messages.app"
@@ -73,6 +73,7 @@
       "/Applications"
       "/Users/thewellington"
       "/Users/thewellington/Documents"
+      "/Users/thewellington/Dropbox"
       "/Users/thewellington/Downloads"
     ];
     dock.enable-spring-load-actions-on-all-items = true;
