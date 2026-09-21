@@ -43,7 +43,7 @@
       "/Applications/Adobe\ Illustrator\ 2026/Adobe\ Illustrator.app"
       "/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app"
 
-      "Applications/Pastel.app"
+      "/Applications/Pastel.app"
 
       # Creative (Affinity apps)
       "/Applications/Affinity\ Designer.app"
@@ -92,7 +92,7 @@
     iCal."TimeZone support enabled" = true;
     iCal.CalendarSidebarShown = true;
     loginwindow.autoLoginUser = null;
-    loginwindow.LoginwindowText = "Found this computer? Please contect W. S. Wellington at thewellington@gmail.com";
+    loginwindow.LoginwindowText = "Found this computer? Please contact W. S. Wellington at thewellington@gmail.com";
     loginwindow.SHOWFULLNAME = true;
     menuExtraClock.Show24Hour = true;
     menuExtraClock.ShowAMPM = false;
@@ -114,18 +114,14 @@
 
     CustomUserPreferences = {
       "NSGlobalDomain" = { # use for defaults that are not available via Nix
-        NSSplitViewItemSidebarDefaultsToFloatingAppearance = false; # Default true - turns off floating sidebar in Finder windows
-        NSConvolutionOverride1 = 10; # Default 26 - set Finder window corner radius
-        NSSplitViewItemGlassMinimumCornerRadius = 10; # default 19 - Set sidebar corner radius in Finder windows
-        NSQuitAlwaysKeepsWindows = false;
+        # NSSplitViewItemSidebarDefaultsToFloatingAppearance = false; # Default true - turns off floating sidebar in Finder windows
+        # NSConvolutionOverride1 = 10; # Default 26 - set Finder window corner radius
+        # NSSplitViewItemGlassMinimumCornerRadius = 10; # default 19 - Set sidebar corner radius in Finder windows
+        # NSQuitAlwaysKeepsWindows = false;
         # ApplePressAndHoldEnabled = false; # default: deleted - when enabled, pressed and held keys generate accents, not repeats
-
-  };
-
-
-      # "com.apple.Safari" = {
-      #   ShowFullURLInSmartSearchField = true;
-      # };
+        "com.apple.trackpad.scaling" = 2.0;
+        "com.apple.mouse.scaling" = 2.0;
+      };
     };
   };
 }

@@ -123,7 +123,7 @@
     enableZshIntegration = false;
     settings = {
       add_newline = true;
-      format = "$username$hostname$directory$nix_shell$git_branch$git_status$cmd_duration$jobs$character";
+      format = "$username$hostname$directory$nix_shell$git_branch$git_status$cmd_duration$jobs$line_break$character";
       hostname.disabled = false;
       username.disabled = false;
       username.show_always = true;

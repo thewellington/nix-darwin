@@ -72,12 +72,9 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      programs.zsh ={
+      programs.zsh = {
         enable = true;
         promptInit = "";
-        interactiveShellInit = ''
-          eval "$(${pkgs.starship}/bin/starship init zsh)"
-        '';
       };
     };
   in
@@ -108,7 +105,7 @@
         {
             nix-homebrew = {
               enable = true;
-              enableRosetta = true;
+              enableRosetta = false;
               user = "thewellington";
             };
         }
