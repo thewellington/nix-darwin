@@ -5,7 +5,7 @@
 
     # gui apps
     # arq # does not work yet 2026-04
-    bartender
+    # Rbartender # pulling becuase Bartender is buggy af in version 6
     # bbedit #dies not work yet 2026-04-12
     brave
     # discord

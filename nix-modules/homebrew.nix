@@ -13,7 +13,7 @@
       "1password"
       "1password-cli"
       "arq"
-      "bettertouchtool"
+      # "bettertouchtool" # recommended to get from website now, now homebrew
       "dropbox"
       # "font-source-code-pro"
       "gpg-suite"
