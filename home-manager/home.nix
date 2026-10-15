@@ -1,6 +1,6 @@
 # home.nix
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, iglass, ... }:
 
 {
   home.username = "thewellington";
@@ -82,6 +82,11 @@
       package = pkgs.ghostty-bin;
 
       settings = {
+        # iglass Liquid Glass (from flake input). Switch clear ↔ frosted by
+        # changing the variant names below, then rebuild and quit/reopen Ghostty.
+        theme = "light:iglass-frosted-light,dark:iglass-frosted-dark";
+        # theme = "light:iglass-clear-light,dark:iglass-clear-dark";
+
         # my quick terminal settings
         keybind = [ "global:ctrl+grave_accent=toggle_quick_terminal" ];
         "quick-terminal-position" = "top";
@@ -105,14 +110,27 @@
         "shell-integration-features" = "no-title";
 
         # macOS specific features
-        "macos-titlebar-style" = "tabs";
+        "macos-titlebar-style" = "native"; #ideally set to "tabs"
         "macos-option-as-alt" = true;
         "window-save-state" = "default";
         "window-vsync" = true;
         "window-colorspace" = "display-p3";
         "quick-terminal-screen" = "main";
         "macos-icon" = "official";
+        "macos-secure-input-indication" = true;
       };
+  };
+
+  # Prebuilt Ghostty themes from github:vukkt/iglass (clear + frosted).
+  xdg.configFile = {
+    "ghostty/themes/iglass-clear-dark".source =
+      "${iglass}/themes/ghostty/themes/iglass-clear-dark";
+    "ghostty/themes/iglass-clear-light".source =
+      "${iglass}/themes/ghostty/themes/iglass-clear-light";
+    "ghostty/themes/iglass-frosted-dark".source =
+      "${iglass}/themes/ghostty/themes/iglass-frosted-dark";
+    "ghostty/themes/iglass-frosted-light".source =
+      "${iglass}/themes/ghostty/themes/iglass-frosted-light";
   };
 
   # Let Home Manager install and manage itself.

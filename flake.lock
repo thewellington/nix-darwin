@@ -38,6 +38,22 @@
         "type": "github"
       }
     },
+    "iglass": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791976894,
+        "narHash": "sha256-jzmfB9ThYAV3Gdhq8C83F34jV7HIdIkQI5TjhXfHANI=",
+        "owner": "vukkt",
+        "repo": "iglass",
+        "rev": "682b7bdda0b012c59986c1818790f5fd21e521db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vukkt",
+        "repo": "iglass",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -96,6 +112,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "iglass": "iglass",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs"

@@ -11,9 +11,14 @@
     nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/main";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # Liquid Glass themes for Ghostty; refresh with: nix flake update iglass
+    iglass = {
+      url = "github:vukkt/iglass";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager, iglass }:
   let
     configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -97,7 +102,7 @@
           home-manager.backupFileExtension = "nixbkup";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          # home-manager.extraSpecialArgs = { inherit unstable };
+          home-manager.extraSpecialArgs = { inherit iglass; };
           home-manager.users.thewellington = import ./home-manager/home.nix;
         }
 
