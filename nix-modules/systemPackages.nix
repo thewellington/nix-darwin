@@ -7,8 +7,8 @@
     # arq # does not work yet 2026-04
     # Rbartender # pulling becuase Bartender is buggy af in version 6
     # bbedit #dies not work yet 2026-04-12
-    brave
-    # discord
+    # brave # seems like this wants to come from the binary
+    # discord #also better from the binary
     zed-editor
     zoom-us
 
