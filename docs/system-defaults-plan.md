@@ -15,6 +15,7 @@ Ideas from the “what else can I configure?” pass. Already applied items are 
 - [x] `dock.autohide-time-modifier = 0.5` — stock default (was unset)
 - [x] `dock.minimize-to-application = true`
 - [x] Expanded save/print panels (`NSNavPanelExpandedStateForSaveMode` / `PMPrintingExpandedStateForPrint` + `…2`)
+- [x] `dock.scroll-to-open = true` — scroll Dock icon for App Exposé / stacks
 
 ## Everyday UX
 
@@ -63,7 +64,7 @@ Already: `controlcenter.BatteryShowPercentage`.
 
 ## Outside `system.defaults`
 
-- [ ] **`homebrew.masApps`** — pin App Store apps by ID (stub exists in `homebrew.nix`)
+- [x] **`homebrew.masApps`** — App Store apps pinned (excludes brew casks / Nix packages)
 - [ ] **`launchd.user.agents`** — login/background jobs you’d otherwise set in Login Items
 - [ ] **Home Manager** — more app/dotfile config still edited by hand (`xdg.configFile`, editors, shell)
 
