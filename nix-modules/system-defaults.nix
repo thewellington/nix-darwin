@@ -128,6 +128,9 @@
     dock.mru-spaces = false; # don't rearrange Spaces by recent use
     dock.expose-group-apps = true;
     finder.NewWindowTarget = "Home";
+    finder.AppleShowAllExtensions = false; # hide extensions in Finder names
+    finder.FXPreferredViewStyle = "Nlsv"; # list view (icnv | Nlsv | clmv | Flwv)
+    finder.FXRemoveOldTrashItems = false; # Hazel manages Trash; keep macOS 30-day auto-empty off
     finder.ShowExternalHardDrivesOnDesktop = false ;
     finder.ShowHardDrivesOnDesktop = false;
     finder.ShowMountedServersOnDesktop = false;
