@@ -10,8 +10,11 @@
   system.defaults = {
     controlcenter.BatteryShowPercentage = true;
     dock.autohide = true;
+    dock.autohide-delay = 0.2; # stock macOS default (key was unset)
+    dock.autohide-time-modifier = 0.5; # stock macOS default (key was unset)
     dock.magnification = true;
     dock.mineffect = "genie";
+    dock.minimize-to-application = true;
     dock.persistent-apps = [
       #Productivity
       "/Applications/Mimestream.app"
@@ -122,6 +125,7 @@
     dock.tilesize = 16;
     dock.largesize = 128;
     dock.show-recents = false;
+    dock.mru-spaces = false; # don't rearrange Spaces by recent use
     dock.expose-group-apps = true;
     finder.NewWindowTarget = "Home";
     finder.ShowExternalHardDrivesOnDesktop = false ;
