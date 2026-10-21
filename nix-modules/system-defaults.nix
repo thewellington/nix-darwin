@@ -28,16 +28,18 @@
       "/System/Applications/Phone.app"
 
       # Code
+      { spacer = { small = true; }; }
       "/Applications/BBEdit.app"
       "${pkgs.zed-editor}/Applications/Zed.app"
       "/Applications/Cursor.app"
       "/Applications/Kaleidoscope.app"
       "/Applications/Tower.app"
-      # "Applications/Transmit.app"
+      "/Applications/Transmit.app"
       "/Applications/TablePlus.app"
-      "/Applications/Table\ Tool.app"
+      # "/Applications/Table\ Tool.app"
 
       # Creative tools (Adobe)
+      { spacer = { small = true; }; }
       "/Applications/Adobe\ Photoshop\ 2026/Adobe\ Photoshop\ 2026.app"
       "/Applications/Adobe\ Lightroom\ Classic/Adobe\ Lightroom\ Classic.app"
       "/Applications/Adobe\ Illustrator\ 2026/Adobe\ Illustrator.app"
@@ -51,30 +53,70 @@
       "/Applications/Affinity\ Photo.app"
 
 
-      # Nik Collections
+      # Creative (Nik Collection)
       "/Applications/Nik\ Collection\ 8/Nik\ 8\ Silver\ Efex.app"
       "/Applications/Nik\ Collection\ 8/Nik\ 8\ Presharpener.app"
       "/Applications/Nik\ Collection\ 8/Nik\ 8\ Sharpener\ Output.app"
 
+      # Creative (Audio tools)
+      "/Applications/Fission.app"
+
       # Office
+      { spacer = { small = true; }; }
       "/Applications/Microsoft\ Word.app"
       "/Applications/Microsoft\ Excel.app"
       "/Applications/Microsoft\ PowerPoint.app"
+      "/Applications/Pages\ Creator\ Studio.app"
+      "/Applications/Numbers\ Creator\ Studio.app"
+      "/Applications/Keynote\ Creator\ Studio.app"
+
+      # AI
+      "/Applications/Cursor.app"
 
       # Utilities
+      { spacer = { small = true; }; }
       "/Applications/pCalc.app"
       #"${pkgs.iterm2}/Applications/iTerm2.app"
       "/Users/thewellington/Applications/Home Manager Apps/Ghostty.app"
       "/System/Applications/Utilities/Terminal.app"
       "/System/Applications/Utilities/Activity\ Monitor.app"
       "/System/Applications/Utilities/Console.app"
+
     ];
     dock.persistent-others = [
-      "/Applications"
-      "/Users/thewellington"
-      "/Users/thewellington/Documents"
-      "/Users/thewellington/Dropbox"
-      "/Users/thewellington/Downloads"
+      # arrangement: name | date-added | date-modified | date-created | kind
+      # displayas:   stack | folder
+      # showas:      automatic | fan | grid | list
+      { folder = {
+        path = "/Applications";
+        arrangement = "name";
+        displayas = "stack";
+        showas = "grid";
+      }; }
+      { folder = {
+        path = "/Users/thewellington";
+        arrangement = "name";
+        displayas = "folder";
+        showas = "grid";
+      }; }
+      { folder = {
+        path = "/Users/thewellington/Documents";
+        arrangement = "name";
+        displayas = "folder";
+        showas = "grid";
+      }; }
+      { folder = {
+        path = "/Users/thewellington/Library/CloudStorage/Dropbox";
+        arrangement = "name";
+        displayas = "folder";
+        showas = "grid";
+      }; }
+      { folder = {
+        path = "/Users/thewellington/Downloads";
+        arrangement = "date-added";
+        displayas = "stack";
+        showas = "fan";
+      }; }
     ];
     dock.enable-spring-load-actions-on-all-items = true;
     dock.tilesize = 16;
