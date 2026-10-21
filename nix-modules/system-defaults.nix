@@ -165,6 +165,10 @@
       # false = key repeat on hold; true = accent popup (blocks repeat)
       ApplePressAndHoldEnabled = false;
       AppleInterfaceStyle = "Dark";
+      NSNavPanelExpandedStateForSaveMode = true;
+      NSNavPanelExpandedStateForSaveMode2 = true;
+      PMPrintingExpandedStateForPrint = true;
+      PMPrintingExpandedStateForPrint2 = true;
     };
 
     CustomUserPreferences = {
