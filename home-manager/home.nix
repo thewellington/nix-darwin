@@ -71,7 +71,13 @@
       core.excludesfile = "~/.gitignore";
       init.defaultBranch = "main";
       github.user = "thewellington";
-      credential.helper = ["" "netlify" "osxkeychain"];
+      # Absolute path required for GUI apps (Tower) that don't load shell PATH
+      # where ~/.netlify/helper/bin is added via path.zsh.inc.
+      credential.helper = [
+        ""
+        "/Users/thewellington/.netlify/helper/bin/git-credential-netlify"
+        "osxkeychain"
+      ];
       include.path = "/Users/thewellington/.netlify/helper/git-config";
     };
   };
