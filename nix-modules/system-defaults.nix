@@ -157,6 +157,7 @@
       InitialKeyRepeat = 15;
       # false = key repeat on hold; true = accent popup (blocks repeat)
       ApplePressAndHoldEnabled = false;
+      AppleInterfaceStyle = "Dark";
     };
 
     CustomUserPreferences = {
