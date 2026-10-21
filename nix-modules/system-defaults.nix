@@ -126,6 +126,7 @@
     dock.largesize = 128;
     dock.show-recents = false;
     dock.mru-spaces = false; # don't rearrange Spaces by recent use
+    dock.scroll-to-open = true; # scroll up on Dock icon to show app windows / open stack
     dock.expose-group-apps = true;
     finder.NewWindowTarget = "Home";
     finder.AppleShowAllExtensions = false; # hide extensions in Finder names
