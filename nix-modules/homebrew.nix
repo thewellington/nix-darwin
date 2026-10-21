@@ -31,7 +31,6 @@
       "qlstephen"
       "qlcommonmark"
       #"quicklook-json"
-      #"1Password-cli"
       #"wkhtmltopdf"
       #"warp"
       "whatcable"
@@ -59,18 +58,18 @@
       "Gladys" = 1382386877;
       "GuruPro" = 891362701;
       "HazeOver" = 430798174;
-      "iMovie" = 408981434;
+      # "iMovie" = 408981434;
       "Infuse" = 1136220934;
       "Internet Access Policy Viewer" = 1482630322;
-      "Keynote" = 409183694; # /Applications/Keynote.app (14.5)
+      # "Keynote" = 409183694; # /Applications/Keynote.app (14.5)
       "Keynote Creator Studio" = 361285480; # /Applications/Keynote Creator Studio.app (15.4)
       "Keystroke Pro" = 1572206224;
       "LG Screen Manager" = 1142051783;
       "Mactracker" = 430255202;
       "Mic Drop" = 1489816366;
-      "Numbers" = 409203825;
+      # "Numbers" = 409203825;
       "Numbers Creator Studio" = 361304891;
-      "Pages" = 409201541;
+      # "Pages" = 409201541;
       "Pages Creator Studio" = 361309726;
       "Pastel" = 413897608;
       "PCalc" = 403504866;
@@ -82,8 +81,10 @@
       "World Clock Pro" = 858446756;
     };
 
-    onActivation.cleanup = "uninstall"; # none, uninstall, zap
-    onActivation.autoUpdate = true;
+    onActivation.cleanup = "uninstall"; # none, check, uninstall, zap
+    # false avoids a nix-homebrew + brew auto-update re-exec bug that breaks masApps
+    # ("Unable to install … mas installation failed" even when already installed).
+    onActivation.autoUpdate = false;
     onActivation.upgrade = true;
   };
 }
