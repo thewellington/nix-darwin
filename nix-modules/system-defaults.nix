@@ -152,6 +152,11 @@
 
     NSGlobalDomain = {
       NSWindowShouldDragOnGesture = true; # allows cmd-ctrl to drag on any window
+      # Lower = faster. macOS defaults are roughly KeyRepeat=6, InitialKeyRepeat=25.
+      KeyRepeat = 2;
+      InitialKeyRepeat = 15;
+      # false = key repeat on hold; true = accent popup (blocks repeat)
+      ApplePressAndHoldEnabled = false;
     };
 
     CustomUserPreferences = {
@@ -160,7 +165,6 @@
         # NSConvolutionOverride1 = 10; # Default 26 - set Finder window corner radius
         # NSSplitViewItemGlassMinimumCornerRadius = 10; # default 19 - Set sidebar corner radius in Finder windows
         # NSQuitAlwaysKeepsWindows = false;
-        # ApplePressAndHoldEnabled = false; # default: deleted - when enabled, pressed and held keys generate accents, not repeats
         "com.apple.trackpad.scaling" = 2.0;
         "com.apple.mouse.scaling" = 2.0;
       };
