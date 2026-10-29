@@ -14,12 +14,14 @@
 
  		# cli apps
     awscli2
-    azure-cli
+    # azure-cli # blocked: depends on broken python fabric (invoke>=3)
+    cmark-gfm
     cowsay
     exiftool
     gpp # resume
     mas # required by homebrew to install mas items
     mkalias
+    multimarkdown
     netlify-cli
     nmap
     pandoc # resume

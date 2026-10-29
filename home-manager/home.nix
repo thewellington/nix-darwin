@@ -116,7 +116,7 @@
         "shell-integration-features" = "no-title";
 
         # macOS specific features
-        "macos-titlebar-style" = "native"; #ideally set to "tabs"
+        "macos-titlebar-style" = "tabs"; #ideally set to "tabs"
         "macos-option-as-alt" = true;
         "window-save-state" = "default";
         "window-vsync" = true;
