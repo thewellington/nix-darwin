@@ -18,6 +18,7 @@
     cmark-gfm
     cowsay
     exiftool
+    gh
     gpp # resume
     mas # required by homebrew to install mas items
     mkalias
