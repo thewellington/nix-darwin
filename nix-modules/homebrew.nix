@@ -6,6 +6,7 @@
     brews = [
       #"mas"
       "brightness"
+      "cmark-gfm"
       "tag"
     ];
 
