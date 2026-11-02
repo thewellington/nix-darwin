@@ -75,6 +75,7 @@
 
       # AI
       "/Applications/Cursor.app"
+      "/Applications/T3\ Code\ (Beta).app"
 
       # Utilities
       { spacer = { small = true; }; }
