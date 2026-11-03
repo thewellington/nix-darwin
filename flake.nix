@@ -32,6 +32,7 @@
         ./nix-modules/systemPackages.nix
         ./nix-modules/homebrew.nix
         ./nix-modules/system-defaults.nix
+        ./nix-modules/text-replacements.nix
         ./nix-modules/fonts.nix
       ];
 
