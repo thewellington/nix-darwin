@@ -34,12 +34,17 @@
       { spacer = { small = true; }; }
       "/Applications/BBEdit.app"
       "${pkgs.zed-editor}/Applications/Zed.app"
-      "/Applications/Cursor.app"
       "/Applications/Kaleidoscope.app"
       "/Applications/Tower.app"
       "/Applications/Transmit.app"
       "/Applications/TablePlus.app"
       # "/Applications/Table\ Tool.app"
+
+      # AI
+      { spacer = { small = true; }; }
+      "/Applications/Cursor.app"
+      "/Applications/T3\ Code\ (Beta).app"
+      "/Applications/T3\ +\ Qwen.app"
 
       # Creative tools (Adobe)
       { spacer = { small = true; }; }
@@ -72,10 +77,6 @@
       "/Applications/Pages\ Creator\ Studio.app"
       "/Applications/Numbers\ Creator\ Studio.app"
       "/Applications/Keynote\ Creator\ Studio.app"
-
-      # AI
-      "/Applications/Cursor.app"
-      "/Applications/T3\ Code\ (Beta).app"
 
       # Utilities
       { spacer = { small = true; }; }
