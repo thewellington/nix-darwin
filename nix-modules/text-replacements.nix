@@ -18,12 +18,11 @@ let
     { on = 1; replace = "Kama"; "with" = ",-la!"; }
     { on = 1; replace = "ansible"; "with" = "Ansible"; }
     { on = 1; replace = "api"; "with" = "API"; }
-    { on = 1; replace = "arb"; "with" = "Arbor Heights"; }
     { on = 1; replace = "becca"; "with" = "Becca"; }
     { on = 1; replace = "bnb"; "with" = "Bing and Bong"; }
     { on = 1; replace = "boxen"; "with" = "boxen"; }
     { on = 1; replace = "britta"; "with" = "Britta"; }
-    { on = 1; replace = "campwabumaddr"; "with" = "Camp Wabun Bear Island P. O. Temagami, ON P0H-1C0 CANADA"; }
+    { on = 1; replace = "campwabunaddr"; "with" = "Camp Wabun Bear Island P. O. Temagami, ON P0H-1C0 CANADA"; }
     { on = 1; replace = "centos"; "with" = "CentOS"; }
     { on = 1; replace = "cert"; "with" = "cert"; }
     { on = 1; replace = "certs"; "with" = "certs"; }

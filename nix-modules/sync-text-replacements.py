@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Manage macOS Keyboard text replacements from a nix-declared desired set.
 
-Upserts entries present in the desired JSON and soft-deletes (ZWASDELETED=1)
-any active DB rows whose shortcut is not declared, so nix is the source of truth.
+Upserts entries present in the desired JSON and removes any DB rows whose
+shortcut is not declared, so nix is the source of truth.
 """
 from __future__ import annotations
 
 import argparse
+import subprocess
 import json
 import sqlite3
 import time
@@ -96,21 +97,36 @@ def sync(db_path: Path, desired: list[dict[str, str]]) -> tuple[int, int, int]:
         )
         added += 1
 
-    # Soft-delete anything active that isn't declared in nix.
-    for shortcut, (pk, _phrase, was_deleted) in existing.items():
-        if shortcut in desired_map or was_deleted:
+    # Remove anything that isn't declared in nix.
+    # Soft-delete first (iCloud tombstone), then hard-delete locally so the
+    # Keyboard Settings UI does not keep showing the shortcut.
+    for shortcut, (pk, _phrase, was_deleted) in list(existing.items()):
+        if shortcut in desired_map:
             continue
-        conn.execute(
-            """
-            UPDATE ZTEXTREPLACEMENTENTRY
-               SET ZWASDELETED = 1,
-                   ZNEEDSSAVETOCLOUD = 1,
-                   ZTIMESTAMP = ?,
-                   Z_OPT = Z_OPT + 1
-             WHERE Z_PK = ?
-            """,
-            (now, pk),
-        )
+        if not was_deleted:
+            conn.execute(
+                """
+                UPDATE ZTEXTREPLACEMENTENTRY
+                   SET ZWASDELETED = 1,
+                       ZNEEDSSAVETOCLOUD = 1,
+                       ZTIMESTAMP = ?,
+                       Z_OPT = Z_OPT + 1
+                 WHERE Z_PK = ?
+                """,
+                (now, pk),
+            )
+            removed += 1
+        conn.execute("DELETE FROM ZTEXTREPLACEMENTENTRY WHERE Z_PK = ?", (pk,))
+        existing.pop(shortcut, None)
+
+    # Also purge any leftover tombstones for shortcuts not in nix.
+    for row in conn.execute(
+        "SELECT Z_PK, ZSHORTCUT FROM ZTEXTREPLACEMENTENTRY WHERE ZWASDELETED = 1"
+    ).fetchall():
+        pk, shortcut = row
+        if shortcut in desired_map:
+            continue
+        conn.execute("DELETE FROM ZTEXTREPLACEMENTENTRY WHERE Z_PK = ?", (pk,))
         removed += 1
 
     conn.execute(
@@ -132,6 +148,18 @@ def main() -> None:
     print(
         f"text-replacements: added {added}, updated {updated}, removed {removed}"
     )
+    # Reload text-input stack so in-memory caches drop removed shortcuts.
+    for proc in (
+        "keyboardservicesd",
+        "TextInputMenuAgent",
+        "TextInputSwitcher",
+    ):
+        subprocess.run(
+            ["/usr/bin/killall", proc],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
 
 
 if __name__ == "__main__":
