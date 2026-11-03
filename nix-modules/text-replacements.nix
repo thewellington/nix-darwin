@@ -1,9 +1,15 @@
-# macOS Keyboard → Text Replacements (NSUserDictionaryReplacementItems)
-# Exported from ~/Library/KeyboardServices/TextReplacements.db
-{
-  system.defaults.CustomUserPreferences.NSGlobalDomain.NSUserDictionaryReplacementItems = [
+# macOS Keyboard → Text Replacements
+# Desired list is declared below. On activate we also upsert into
+# ~/Library/KeyboardServices/TextReplacements.db (the live macOS store).
+# NSUserDictionaryReplacementItems alone is not enough on modern macOS.
+{ config, pkgs, lib, ... }:
+let
+  user = config.system.primaryUser;
+  home = config.users.users.${user}.home;
+  items = [
     { on = 1; replace = "!?"; "with" = "‽"; }
     { on = 1; replace = "$G"; "with" = "₲"; }
+    { on = 1; replace = "$U"; "with" = "֏"; }
     { on = 1; replace = "143"; "with" = "1-4-3"; }
     { on = 1; replace = "@c"; "with" = "©️"; }
     { on = 1; replace = "@r"; "with" = "®️"; }
@@ -102,4 +108,22 @@
     { on = 1; replace = "vzw"; "with" = "VZW"; }
     { on = 1; replace = "workemail"; "with" = "bill.wellington@recroom.com"; }
   ];
+  desiredJson = pkgs.writeText "text-replacements.json" (
+    builtins.toJSON (
+      map (i: {
+        shortcut = i.replace;
+        phrase = i."with";
+      }) items
+    )
+  );
+in {
+  system.defaults.CustomUserPreferences.NSGlobalDomain.NSUserDictionaryReplacementItems = items;
+
+  system.activationScripts.postActivation.text = ''
+    echo "syncing Keyboard text replacements for ${user}..." >&2
+    /usr/bin/sudo -u ${user} ${pkgs.python3}/bin/python3 \
+      ${./sync-text-replacements.py} \
+      --db "${home}/Library/KeyboardServices/TextReplacements.db" \
+      --json ${desiredJson}
+  '';
 }
